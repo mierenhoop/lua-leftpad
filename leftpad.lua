@@ -1,10 +1,14 @@
 local rep = string.rep
 
+---@param str string
+---@param len number
+---@param ch string
+---@return string
 local function leftpad(str, len, ch)
   return rep(ch or " ", len - #str) .. str
 end
 
-if ... then
+if not pcall(debug.getlocal, 4, 1)  then
   if ... == "-h" or ... == "--help" then
     print[[
 Usage: leftpad.lua [OPTION] STR LEN [CH]
